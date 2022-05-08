@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     
 <div id="top">
     <img id="pic" src="https://www.theoutnet.com/assets/ton-background-images/high-res.jpg" alt="background"/>
     
-    <!-- <div class = "login-page"> -->
-        
-     <div class="form">
-         <form class="register-form">
+    <div class="Myform">
+         <form id="Newform">
         </br>
             <p>Welcome</p>
          
@@ -29,53 +28,75 @@
     </br>
 </br>
             
-
-            
-            <!-- <input type="radio" name="register" value="true">
-                I'm already registered -->
-                <div class="radio1">
-                    <input type="radio" id="hasAccount0" name="hasAccount" value="true">
+<div class="radio1">
+                    <input type="radio" id="hasAccount0"   name="hasAccount" value="true">
                     <label for="hasAccount0">I'm already registered</label>
                 </div>
-            
-        
-    
-                <div class="radio1">
-                    <input type="radio" id="hasAccount1" checked name="hasAccount" value="false">
-                    <label for="hasAccount1">I'm new to THE OUTNET </label>
-                </div>
-
-
-            
-            
-
-            
-            <!-- <input type="radio" name="register" value="false">
-            I'm new to THE OUTNET -->
-        </br>
-    </br>
-            <lable>
+                 <div class="radio1">
+                    <input type="radio"  value="false" onclick="location.href = 'signup.html';">
+                    <label  for="hasAccount1" > I'm new to THE OUTNET </label>
+             </div>
+             </br>
+             </br>
+             <lable>
                 Password
             </lable>
-            <input id="b" type="password" />
+            <input id="b" type="password" /> 
             
             <br />
             <button>sign in</button>
+            
+                
+        
             <lable>
                 <p id="para">Forgot your password? <a href="#"></a></p>
             </lable>
-            <!-- <lable>
-                <p>no account <a href="signup.html"></a>signup</p>
-            </lable> -->
+            
             
          </form>
      </div>   
     </div>
+  
+</body>
+<script> 
 
-<!-- </div> -->
+var Userid=JSON.parse(localStorage.getItem("MYstorage"))
 
+     document.querySelector("#Newform").addEventListener("submit",function(event){
+
+        map=[]
+
+        event.preventDefault();
+
+        var MyCollection={
+            mail:Newform.a.value,
+            Pass:Newform.b.value,
+        }
+
+        map.push(MyCollection)
+        // console.log(map);
+        localStorage.setItem("login",JSON.stringify(map))
+
+    
+       
+        if(map.mail==Userid.Email && map.Pass==Userid.Password){
+            // localStorage.setItem("login",JSON.stringify(map))
+            //  alert("The specified email or password are not correct")
+             window.location.href="index_women.html";
+        }
+        else
+        {
+            alert("The specified email or password are not correct!")
+        }
+       
+  
+        
+     })
+
+    
+     
+
+</script>
   
 
-
-</body>
 </html>

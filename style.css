@@ -53,12 +53,11 @@ input[type=text],input[type=password]
     border: 1px solid #ccc;
 }
 
-    .radio1 input[type=radio] {
-        
+    .radio1 input[type=radio] {  
         width: 24px;
        height: 24px;
        background: #FFFFFF;
-       margin: 0px 16px 0px 0px;
+       margin: 0px 16px 15px 0px;
     }
     
 button{
@@ -80,3 +79,4 @@ button:hover{
     text-decoration: underline;
 }
 
+           
